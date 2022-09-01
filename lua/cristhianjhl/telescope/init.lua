@@ -1,0 +1,1 @@
+require('cristhianjhl.telescope.remap')
