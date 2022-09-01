@@ -12,6 +12,7 @@ return require('packer').startup(function()
     -- Themes
     use 'morhetz/gruvbox'
     use 'wuelnerdotexe/vim-enfocado'
+    use 'wuelnerdotexe/nerdterm'
 
     -- LSP Settings
     use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client

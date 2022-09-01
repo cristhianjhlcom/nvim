@@ -1,5 +1,7 @@
 local options = {
     showtabline         = 2,
+    list                = true,
+    listchars           = {eol = '↲', tab = '▸ ', trail = '·'},
     encoding            = "UTF-8",
     guicursor           = "",
     nu                  = true,
