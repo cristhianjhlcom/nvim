@@ -19,6 +19,8 @@ return require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer'                                           -- Automatically install language servers to stdpath
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }               -- Autocompletion
     use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }           -- Snippet Engine and Snippet Expansion
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
 
     -- Telescope Settings
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = {{'nvim-lua/plenary.nvim'}}}

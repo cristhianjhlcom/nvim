@@ -28,7 +28,7 @@ local options = {
     updatetime          = 50,
     colorcolumn         = "80",
     mouse               = "a",
-    completeopt         = "menuone,noselect"
+    completeopt         = "menu,menuone,noselect"
 }
 
 vim.g.mapleader = " "
