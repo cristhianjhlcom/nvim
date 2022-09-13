@@ -42,6 +42,13 @@ return require('packer').startup(function()
     use 'numToStr/Comment.nvim'                                                     -- "gc" to comment visual regions/lines
     use 'lukas-reineke/indent-blankline.nvim'                                       -- Add indentation guides even on blank lines
 
+    -- STATUS LINE
+    use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+    
+    -- AIRLINE
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
+
     if is_bootstrap then
         require('packer').sync()
     end

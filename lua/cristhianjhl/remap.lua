@@ -39,6 +39,10 @@ nnoremap("<S-q>", "<CMD>bdelete!<CR>", opts)
 -- Better Paste.
 vnoremap("p", '"_dP', opts)
 
+-- TABS
+nnoremap("<C-l>", ":tabnext<CR>")
+nnoremap("<C-h>", ":tabprevious<CR>")
+
 -- Stay in Indent mode.
 vnoremap("<", "<gv", opts)
 vnoremap(">", ">gv", opts)
@@ -57,6 +61,7 @@ xnoremap("<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Open NeoVim Config File
 nnoremap("<Leader>ev", "<CMD>e<SPACE>c:/Users/Cristhian/AppData/Local/nvim/<CR>")
+nnoremap("<Leader>tt", "<CMD>NERDTermToggle<CR>")
 
 -- Entel Scripts for Development
 nnoremap("<Leader>etag", ":e C:\\projects\\repo_atg\\entel-postpay\\atg\\Design\\base\\react\\tags<CR>")
