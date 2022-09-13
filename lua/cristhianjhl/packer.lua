@@ -49,6 +49,12 @@ return require('packer').startup(function()
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
 
+    -- JavaScript Plugings
+    use 'mxw/vim-jsx'
+    use 'pangloss/vim-javascript'
+    use 'w0rp/ale'
+    use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+
     if is_bootstrap then
         require('packer').sync()
     end

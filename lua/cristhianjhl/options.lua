@@ -1,3 +1,11 @@
+local os = vim.loop.os_uname().sysname
+
+if (os == "Windows_NT") then
+    local undo_dir = "c:/Users/USER/AppData/Local/nvim/undodir"
+else
+    local undo_dir = "~/.config/nvim/undodir"
+end
+
 local options = {
     showtabline         = 2,
     list                = true,
@@ -19,7 +27,7 @@ local options = {
     errorbells          = false,
     swapfile            = false,
     backup              = false,
-    undodir             = "c:/Users/USER/AppData/Local/nvim/undodir",
+    undodir             = undo_dir,
     undofile            = true,
     termguicolors       = true,
     scrolloff           = 8,
