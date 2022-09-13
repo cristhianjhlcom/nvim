@@ -1,3 +1,5 @@
 undodir/
 undodir
+unodir/**/*
+plugin/
 test.*
