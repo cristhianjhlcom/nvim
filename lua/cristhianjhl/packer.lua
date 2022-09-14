@@ -21,6 +21,7 @@ return require('packer').startup(function()
     use 'morhetz/gruvbox'
     use 'wuelnerdotexe/vim-enfocado'
     use 'wuelnerdotexe/nerdterm'
+    use 'dracula/vim'
 
     -- LSP Settings
     use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
@@ -54,8 +55,8 @@ return require('packer').startup(function()
     use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
     
     -- AIRLINE
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+    -- use 'vim-airline/vim-airline'
+    -- use 'vim-airline/vim-airline-themes'
 
     -- JavaScript Plugings
     use 'mxw/vim-jsx'
@@ -64,6 +65,8 @@ return require('packer').startup(function()
     use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
     use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production', branch = 'release/0.x' }
     -- use 'MunifTanjim/prettier.nvim'
+
+    use 'laytan/cloak.nvim'
 
     if is_bootstrap then
         require('packer').sync()
