@@ -54,6 +54,8 @@ return require('packer').startup(function()
     use 'pangloss/vim-javascript'
     use 'w0rp/ale'
     use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+    use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production', branch = 'release/0.x' }
+    -- use 'MunifTanjim/prettier.nvim'
 
     if is_bootstrap then
         require('packer').sync()
