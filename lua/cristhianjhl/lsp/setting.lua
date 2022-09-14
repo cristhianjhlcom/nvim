@@ -2,15 +2,15 @@
 -- TODO: Get tsserver -> on PATH.
 -- TODO: Tell nvim to use tsserver.
 local on_attach = function()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0})
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = 0})
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = 0, desc = "Hover Documentation"})
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = 0, desc = "[G]o to [D]efinition"})
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer = 0})
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer = 0})
     vim.keymap.set("n", "<Leader>dk", vim.diagnostic.goto_next, {buffer = 0})
     vim.keymap.set("n", "<Leader>dj", vim.diagnostic.goto_prev, {buffer = 0})
     vim.keymap.set("n", "<Leader>dl", "<CMD>Telescope diagnostics<CR>", {buffer = 0})
-    vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, {buffer = 0})
-    vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, {buffer = 0})
+    vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, {buffer = 0, desc = "[R]e[N]ame"})
+    vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, {buffer = 0, desc = "[C]ode [A]ction"})
 end
 
 require'lspconfig'.tsserver.setup{ 

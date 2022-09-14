@@ -5,11 +5,25 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = {"javascript", "php", "css", "html", "json"},
+    ensure_installed = {
+        "javascript",
+        "typescript",
+        "lua",
+        "python",
+        "php",
+        "css",
+        "html",
+        "json",
+    },
     highlight = {enable = true},
     indent = {enable = true},
     incremenetal_selection = {
         enable = true,
-        keymaps = {},
+        keymaps = {
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<c-backspace>',
+        },
     },
 }
