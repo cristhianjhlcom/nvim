@@ -7,8 +7,18 @@ else
 end
 
 local options = {
-    showtabline         = 2,
+    showtabline         = 0,
+    clipboard           = "unnamedplus",
+    conceallevel        = 0,
+    ignorecase          = true,
+    pumheight           = 10,
+    smartcase           = true,
+    splitbelow          = true,
+    splitright          = true,
+    writebackup         = false,
     list                = true,
+    cursorline          = true,
+    sidescrolloff       = 8,
     listchars           = {eol = '↲', tab = '▸ ', trail = '·'},
     encoding            = "UTF-8",
     guicursor           = "",
@@ -40,7 +50,12 @@ local options = {
 }
 
 vim.g.mapleader = " "
+vim.opt.shortmess:append "c"
 
 for key in pairs(options) do
 	vim.opt[key] = options[key]
 end
+
+vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd [[set iskeyword+=-]]
+vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

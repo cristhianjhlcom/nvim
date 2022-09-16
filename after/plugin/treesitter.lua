@@ -16,6 +16,7 @@ configs.setup {
         "html",
         "json",
     },
+    sync_install = false,
     highlight = {enable = true, disable = {}},
     indent = {enable = true, disable = {}},
     ignore_install = {"phpdoc"},
