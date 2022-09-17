@@ -61,6 +61,8 @@ return require('packer').startup(function()
     -- use 'vim-airline/vim-airline'
     -- use 'vim-airline/vim-airline-themes'
 
+    use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
+    
     -- JavaScript Plugings
     use 'mxw/vim-jsx'
     use 'pangloss/vim-javascript'
