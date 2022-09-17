@@ -7,7 +7,8 @@ else
 end
 
 local options = {
-    showtabline         = 0,
+    showtabline         = 2,
+    title               = true,
     clipboard           = "unnamedplus",
     conceallevel        = 0,
     ignorecase          = true,

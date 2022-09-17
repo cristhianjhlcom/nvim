@@ -40,6 +40,8 @@ nnoremap("<S-q>", "<CMD>bdelete!<CR>", opts)
 vnoremap("p", '"_dP', opts)
 
 -- TABS
+nnoremap("<Leader>te", ":tabedit<CR>")
+nnoremap("<Leader>tc", ":tabclose<CR>")
 nnoremap("<C-l>", ":tabnext<CR>")
 nnoremap("<C-h>", ":tabprevious<CR>")
 

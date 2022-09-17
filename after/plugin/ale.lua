@@ -7,6 +7,6 @@ vim.cmd([[
     \ 'javascript': ['prettier', 'eslint']
     \ }
 
-  let g:ale_fix_on_save = 0 
+  let g:ale_fix_on_save = 0
   nmap <leader>d <Plug>(ale_fix)
 ]])
