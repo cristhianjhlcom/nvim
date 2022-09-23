@@ -2,3 +2,6 @@ undodir/
 undodir
 unodir/**/*
 test.*
+node_modules/
+package.json
+package-lock.json

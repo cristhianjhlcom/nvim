@@ -10,6 +10,7 @@ local options = {
     showtabline         = 2,
     title               = true,
     clipboard           = "unnamedplus",
+    showmode            = false,
     conceallevel        = 0,
     ignorecase          = true,
     pumheight           = 10,

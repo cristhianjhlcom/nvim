@@ -19,9 +19,10 @@ return require('packer').startup(function()
 
     -- Themes
     use 'morhetz/gruvbox'
-    use 'wuelnerdotexe/vim-enfocado'
+    -- use 'wuelnerdotexe/vim-enfocado'
     use 'wuelnerdotexe/nerdterm'
     use 'dracula/vim'
+    use 'tomasr/molokai'
 
     -- LSP Settings
     use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
@@ -66,7 +67,8 @@ return require('packer').startup(function()
     -- JavaScript Plugings
     use 'mxw/vim-jsx'
     use 'pangloss/vim-javascript'
-    use 'w0rp/ale'
+    -- use 'w0rp/ale'
+    use 'jose-elias-alvarez/null-ls.nvim'
     use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
     use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production', branch = 'release/0.x' }
     -- use 'MunifTanjim/prettier.nvim'
