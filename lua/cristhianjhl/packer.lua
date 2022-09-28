@@ -23,6 +23,8 @@ return require('packer').startup(function()
     use 'wuelnerdotexe/nerdterm'
     use 'dracula/vim'
     use 'tomasr/molokai'
+    use 'sickill/vim-monokai'
+    use { 'https://gitlab.com/__tpb/monokai-pro.nvim', as = 'monokai-pro.nvim' }
 
     -- LSP Settings
     use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
@@ -68,6 +70,7 @@ return require('packer').startup(function()
     use 'mxw/vim-jsx'
     use 'pangloss/vim-javascript'
     -- use 'w0rp/ale'
+    use 'dense-analysis/ale'
     use 'jose-elias-alvarez/null-ls.nvim'
     use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
     use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production', branch = 'release/0.x' }
