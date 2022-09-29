@@ -13,7 +13,27 @@ end
 
 local capabilities = cmp_nvm_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-nvim_lsp_installer.setup {}
+nvim_lsp_installer.setup {
+    ensure_installed = {
+        "tsserver",
+        "intelephense",
+        "pyright",
+        "sumneko_lua",
+        "jsonls",
+        "cssls",
+        "html",
+        "eslint",
+        "emmet_ls",
+    },
+    automatic_installation = true,
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        },
+    },
+}
 
 -- TODO: Native LSP Setup.
 -- TODO: Get tsserver -> on PATH.
@@ -29,6 +49,8 @@ local on_attach = function()
     vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { buffer = 0 })
     vim.keymap.set("n", "<Leader>dl", "<CMD>Telescope diagnostics<CR>", { buffer = 0 })
     vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "[R]e[N]ame" })
+    vim.keymap.set("i", "<A-m>", vim.lsp.buf.completion,
+        { buffer = 0, desc = "Retrieves the completion items at the current cursor." })
     vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "[C]ode [A]ction" })
 end
 
@@ -38,6 +60,61 @@ require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 } -- Connect to the server.
+
+require 'lspconfig'.emmet_ls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+        html = {
+            options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ["bem.enabled"] = true,
+            },
+        },
+    }
+}
+
+require 'lspconfig'.eslint.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        codeAction = {
+            disableRuleComment = {
+                enable = true,
+                location = "separateLine"
+            },
+            showDocumentation = {
+                enable = true
+            }
+        },
+        codeActionOnSave = {
+            enable = false,
+            mode = "all"
+        },
+        format = true,
+        nodePath = "",
+        onIgnoredFiles = "off",
+        packageManager = "npm",
+        quiet = false,
+        rulesCustomizations = {},
+        run = "onType",
+        useESLintClass = false,
+        validate = "on",
+        workingDirectory = {
+            mode = "location"
+        }
+    }
+}
+
+require 'lspconfig'.phpactor.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+    }
+}
 
 require 'lspconfig'.intelephense.setup {
     capabilities = capabilities,
@@ -118,4 +195,12 @@ require 'lspconfig'.cssls.setup {
 require 'lspconfig'.html.setup {
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
+        provideFormatter = true
+    },
 }

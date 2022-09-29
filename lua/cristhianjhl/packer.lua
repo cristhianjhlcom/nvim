@@ -20,7 +20,8 @@ return require('packer').startup(function()
     -- Themes
     use 'morhetz/gruvbox'
     -- use 'wuelnerdotexe/vim-enfocado'
-    use 'wuelnerdotexe/nerdterm'
+    -- use 'wuelnerdotexe/nerdterm'
+    use 'akinsho/toggleterm.nvim'
     use 'dracula/vim'
     use 'tomasr/molokai'
     use 'sickill/vim-monokai'
