@@ -67,6 +67,10 @@ return require('packer').startup(function()
 
     use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
     
+    -- PHP Pluging
+    use 'stephpy/vim-php-cs-fixer' 
+    use 'arnaud-lb/vim-php-namespace'
+
     -- JavaScript Plugings
     use 'mxw/vim-jsx'
     use 'pangloss/vim-javascript'

@@ -5,7 +5,14 @@ local xnoremap = require("cristhianjhl.keymap").xnoremap
 
 local opts = {silent = true}
 
+vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<Leader>q", vim.diagnostic.setloclist)
+
 nnoremap("<Leader>pv", "<CMD>Ex<CR>")
+
+-- PHP CS Fixer
+nnoremap("<Leader>pcd", "<CMD>call PhpCsFixerFixDirectory()<CR>", opts)
+nnoremap("<Leader>pcf", "<CMD>call PhpCsFixerFixFile()<CR>", opts)
 
 -- NORMAL
 -- Better Windows Navigation.

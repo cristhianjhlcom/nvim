@@ -249,6 +249,16 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-monokai",
     url = "https://github.com/sickill/vim-monokai"
   },
+  ["vim-php-cs-fixer"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-php-cs-fixer",
+    url = "https://github.com/stephpy/vim-php-cs-fixer"
+  },
+  ["vim-php-namespace"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-php-namespace",
+    url = "https://github.com/arnaud-lb/vim-php-namespace"
+  },
   ["vim-prettier"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-prettier",
