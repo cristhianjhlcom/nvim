@@ -24,11 +24,11 @@ for key in pairs(options) do
     vim.g[key] = options[key]
 end
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup("PHPCSFixer", { clear = true }),
-    pattern = "*.php",
-    command = "call PhpCsFixerFixFile()",
-})
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--     group = vim.api.nvim_create_augroup("PHPCSFixer", { clear = true }),
+--     pattern = "*.php",
+--     command = "call PhpCsFixerFixFile()",
+-- })
 
 local IPHPInsertUse = function()
     vim.cmd("call PhpInsertUse()")
