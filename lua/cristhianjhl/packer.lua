@@ -1,5 +1,6 @@
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
   vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
@@ -11,7 +12,7 @@ local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'source <afile> | PackerCompile',
   group = packer_group,
-  pattern = vim.fn.expand '$MYVIMRC',
+  pattern = 'packer.lua',
 })
 
 return require('packer').startup(function()
@@ -31,12 +32,17 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
     use 'williamboman/nvim-lsp-installer'                                           -- Automatically install language servers to stdpath
     use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }           -- Snippet Engine and Snippet Expansion
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }               -- Autocompletion
+    use { 'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-path',
+        }
+    }                                                                               -- Autocompletion
+
     -- use 'saadparwaiz1/cmp_luasnip
     -- use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-path'
 
     -- Telescope Settings
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = {{'nvim-lua/plenary.nvim'}}}
@@ -70,6 +76,7 @@ return require('packer').startup(function()
     -- PHP Pluging
     use 'stephpy/vim-php-cs-fixer' 
     use 'arnaud-lb/vim-php-namespace'
+    use 'jwalton512/vim-blade'
 
     -- JavaScript Plugings
     use 'mxw/vim-jsx'

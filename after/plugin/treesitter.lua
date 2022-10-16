@@ -16,6 +16,7 @@ configs.setup {
         "html",
         "json",
     },
+    auto_install = true,
     sync_install = false,
     highlight = {enable = true, disable = {}},
     indent = {enable = true, disable = {}},
