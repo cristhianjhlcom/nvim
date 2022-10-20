@@ -11,7 +11,7 @@ if not cmp_ok then
     return
 end
 
-local capabilities = cmp_nvm_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvm_lsp.default_capabilities()
 
 nvim_lsp_installer.setup {
     ensure_installed = {
