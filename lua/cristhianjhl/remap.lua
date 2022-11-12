@@ -14,6 +14,10 @@ nnoremap("<Leader>pv", "<CMD>Ex<CR>")
 nnoremap("<Leader>pcd", "<CMD>call PhpCsFixerFixDirectory()<CR>", opts)
 nnoremap("<Leader>pcf", "<CMD>call PhpCsFixerFixFile()<CR>", opts)
 
+-- NERDTree
+nnoremap("<C-e>", "<CMD>NERDTreeToggle<CR>", opts)
+nnoremap("<Leader>tt", "<CMD>ToggleTerm<CR>", opts)
+
 -- NORMAL
 -- Better Windows Navigation.
 nnoremap("<C-h>", "<C-w>h", opts)
@@ -70,7 +74,6 @@ xnoremap("<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Open NeoVim Config File
 nnoremap("<Leader>ev", "<CMD>e<SPACE>c:/Users/Cristhian/AppData/Local/nvim/<CR>")
-nnoremap("<Leader>tt", "<CMD>NERDTermToggle<CR>")
 
 -- Entel Scripts for Development
 nnoremap("<Leader>etag", ":e C:\\projects\\repo_atg\\entel-postpay\\atg\\Design\\base\\react\\tags<CR>")

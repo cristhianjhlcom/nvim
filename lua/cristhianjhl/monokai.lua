@@ -16,7 +16,6 @@ vim.g.monokaipro_colors = {
     error = "#ff0000"
 }
 
-
 vim.g.cristhianjhl_colorscheme = "monokaipro"
 -- vim.cmd("let g:molokai_original = 1")
 -- vim.cmd("let g:rehash256 = 1")

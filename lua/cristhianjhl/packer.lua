@@ -19,13 +19,8 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
     -- Themes
-    use 'morhetz/gruvbox'
-    -- use 'wuelnerdotexe/vim-enfocado'
-    -- use 'wuelnerdotexe/nerdterm'
     use 'akinsho/toggleterm.nvim'
-    use 'dracula/vim'
-    use 'tomasr/molokai'
-    use 'sickill/vim-monokai'
+    use 'joshdick/onedark.vim'
     use { 'https://gitlab.com/__tpb/monokai-pro.nvim', as = 'monokai-pro.nvim' }
 
     -- LSP Settings
@@ -41,9 +36,6 @@ return require('packer').startup(function()
         }
     }                                                                               -- Autocompletion
 
-    -- use 'saadparwaiz1/cmp_luasnip
-    -- use 'hrsh7th/cmp-nvim-lsp'
-
     -- Telescope Settings
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = {{'nvim-lua/plenary.nvim'}}}
     use 'BurntSushi/ripgrep'
@@ -52,6 +44,15 @@ return require('packer').startup(function()
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+    -- NERDTree
+    use { 'preservim/nerdtree', 
+        requires = {
+            'ryanoasis/vim-devicons',
+            'Xuyuanp/nerdtree-git-plugin',
+            'tiagofumo/vim-nerdtree-syntax-highlight'
+        }
+    }
 
     -- Git Commands on NVIM
     use 'mhinz/vim-signify'

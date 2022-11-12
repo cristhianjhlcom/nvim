@@ -11,7 +11,7 @@ if not cmp_ok then
     return
 end
 
-local capabilities = cmp_nvm_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvm_lsp.default_capabilities()
 
 nvim_lsp_installer.setup {
     ensure_installed = {
@@ -24,6 +24,7 @@ nvim_lsp_installer.setup {
         "html",
         "eslint",
         "emmet_ls",
+        "rust_analyzer",
     },
     automatic_installation = true,
     ui = {
@@ -60,6 +61,11 @@ require 'lspconfig'.tsserver.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 } -- Connect to the server.
+
+require 'lspconfig'.rust_analyzer.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
 require 'lspconfig'.emmet_ls.setup {
     capabilities = capabilities,

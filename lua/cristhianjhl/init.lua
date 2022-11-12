@@ -1,6 +1,6 @@
 require("cristhianjhl.options")
 require("cristhianjhl.packer")
 require("cristhianjhl.remap")
-require("cristhianjhl.colors")
+require("cristhianjhl.onedark")
 require("cristhianjhl.telescope")
 require("cristhianjhl.lsp")

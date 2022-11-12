@@ -15,6 +15,7 @@ configs.setup {
         "css",
         "html",
         "json",
+        "rust",
     },
     auto_install = true,
     sync_install = false,
